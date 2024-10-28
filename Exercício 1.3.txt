@@ -1,0 +1,17 @@
+Exercício 1.3
+
+Faça uma pesquisa sobre o anti-pattern chamado RBAR - Row By Agonizing Row.
+Explique com suas palavras do que se trata.
+
+     O termo anti-pattern RBAR (Row By Agonizing Row) refere-se a um tipo de abordagem ineficiente de processamento de 
+dados, vez que as operações são realizadas uma linha de cada vez, ao invés de aproveitar as capacidades de processamento em
+lote que os bancos de dados relacionais comumente oferecem ao usuário. Por tal razão o padrão é considerado "agonizante" 
+em razão de que, ao trabalhar linha por linha, pode resultar em um desempenho muito mais lento, especialmente quando se 
+está lidando com grandes volumes de dados.
+     Em vez de processar linha por linha, os desenvolvedores devem tentar escrever consultas SQL que operem em conjuntos de
+dados, usando comandos como INSERT, UPDATE, ou DELETE, em resumo, fazer uso de condições que afetam várias linhas de forma 
+simultânea.
+     Também é possível a utilização de funções de agregação como SUM, AVG, COUNT, dentre outras, as quais podem ser usadas
+para processar dados de forma mais eficiente em uma única consulta. Uma terceira opção é armazenar os pocedimentos 
+de forma "encapsulada", na qual a lógica necessária é aplicada em uma única chamada, permitindo que o banco de dados 
+otimize a execução.
